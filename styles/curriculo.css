@@ -1,0 +1,222 @@
+body,
+h1  {
+    padding: 0;
+    margin: 0;
+    font-size: var(--glogal-font-size-desktop-h1);    
+    color: rgb(0, 0, 0);  
+    text-align: center;     
+}
+body {
+  font-size: var(--global-font-size);
+}
+h2  {
+    padding: 0;
+    margin: 0;
+    font-size: var(--glogal-font-size-desktop-h2);
+    color: rgb(0, 0, 0);  
+    text-align: center;   
+}  
+hr 	{
+    width: 50%;
+    color: var(--global-color-border-gen);
+    font-weight: normal;
+}
+.funcao, p, span  {
+    padding: 0;
+    margin: 0;
+    font-size: 1em;      
+    font-style: italic;     
+    color: var(--global-font-color-gen);
+    text-align: center;   
+}
+span {
+  font-weight: bold;
+  letter-spacing: 1.3px;
+  padding-top: 7px;
+  
+}
+.funcao {
+  font-weight: 600;
+  
+}
+.principal {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 50% 25% 25%;
+    grid-template-rows: auto auto 150px;
+    grid-template-areas:    "header header header " 
+                            "secao secao lateral" 
+                            "rodape rodape rodape";
+}
+
+header {
+ grid-area: header;
+ background-color: var(--global-color-header);
+ display: flex;
+ justify-content: space-around;
+ padding: 0px;
+ align-items: center;
+}
+header div {
+    width: 100%;
+}
+.dados-de-contato { /*aside*/
+  grid-area: lateral;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 8px;
+  border: 1px solid rgba(0,0,0,.2);
+}
+
+.perfil-academico { /*footer*/
+  grid-area: rodape;
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  padding-top: 10px; 
+  border: 1px solid var(--global-color-border-gen);
+}
+.formacao, .cursos, .atual {
+  width: 25%;
+  align-self: center;
+}
+.cursos {
+  width: 50%;
+  margin: 0 2px;
+}
+.atual {
+  margin: 0px;
+  padding-right: 20px;
+}
+
+/*/////////////////
+////////////////*/
+
+.foto {
+    display: flex;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+#foto {
+    height: 200px;
+    border: 1px solid rgb(176, 176, 176);
+    padding: 10px;
+    margin-top: 15px;
+}
+#foto:hover {opacity: 0.95;}
+
+.rede-social {
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-start;
+  padding: 5px 10px 0px 0px;
+}
+.rede-social img {
+  width: 25px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+.rede-social img:hover {opacity: 0.5;}
+
+.experiencia {
+    grid-area: secao;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 10px 8px 10px;
+}
+.experiencia div {
+  width: 50%;
+}
+
+/********/
+/*tablet*/
+@media(max-width: 992px) {
+  h1  {
+      font-size: 2em;
+  }
+  h2  {
+  font-size: 2vw;   
+  }
+  .experiencia {
+      flex-direction: column;
+      justify-content: space-between;
+  }
+  .experiencia div {
+    width: 100%;
+  }
+  .rede-social img {
+    width: 22px;
+  }
+  .principal {
+      grid-template-columns: 100%;
+      grid-template-areas: "header" "secao" "lateral" "rodape";
+  }
+  footer {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center; 
+  }
+  .formacao, .cursos, .atual {
+      margin: 0;
+      border: solid 1px #fff;
+      width: 49%;
+      align-self: center;  
+  }
+  .cursos {
+      width: 100%;
+      order: -1;
+  }
+  .formacao{
+    width: 40%;
+  }
+}
+
+/*********** /
+/*smartphone*/
+@media(max-width: 768px) {
+  
+  body {
+        margin: 0 15px;  
+    }
+  h1 {
+      font-size: 1.8em;
+  }
+  h2 {
+  font-size: 1.2em; 
+  }
+  p {
+    font-size: 1em;
+  }
+  header {
+  flex-direction: column;
+  justify-content: center;
+  }
+  .experiencia {
+      flex-direction: column;
+      justify-content: space-between;
+  }
+  .principal, .formacao, .cursos, .atual .experiencia{
+    width: 100%;
+  }
+  .cursos {
+    order: initial; 
+  }
+  .foto {
+      margin-left: 0;
+      margin-bottom: 5px;
+      justify-content: center;
+  }
+  .rede-social {
+    justify-content: center;
+    align-self: center;
+    padding: 0px;
+  }
+  .rede-social img {
+    width: 22px;
+    margin-left: 10px;
+  }
+}
