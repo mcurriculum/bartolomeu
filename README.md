@@ -1,2 +1,2 @@
-# Imerssao-prog-do-zero
-Created with CodeSandbox
+# Currículo
+-fins acadêmicos (experimental)
